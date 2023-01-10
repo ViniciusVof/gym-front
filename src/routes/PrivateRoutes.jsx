@@ -1,13 +1,18 @@
 /* eslint-disable no-console */
-import React from 'react';
+import React from "react";
 
-import propTypes from 'prop-types';
-import { Navigate } from 'react-router-dom';
+import propTypes from "prop-types";
+import { Navigate } from "react-router-dom";
+import Layout from "../components/Layout";
 
 export function PrivateRoutes({ children }) {
-  const isLogged = !!localStorage.getItem('@GymFull:token');
+  const isLogged = !!localStorage.getItem("@GymFull:token");
 
-  return isLogged ? children : <Navigate to="/login" replace />;
+  return isLogged ? (
+    <Layout>{children}</Layout>
+  ) : (
+    <Navigate to="/login" replace />
+  );
 }
 
 PrivateRoutes.defaultProps = {

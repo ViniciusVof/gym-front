@@ -9,6 +9,7 @@ import * as Pages from "../pages";
 const routes = [
   { path: "/login", element: <Pages.Login />, isPrivate: false, noAuth: true },
   { path: "/", element: <Pages.Home />, isPrivate: true },
+  { path: "/users", element: <Pages.Users />, isPrivate: true },
 ];
 
 function getElementType(route) {
